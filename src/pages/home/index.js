@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useEffect} from "react"
 import $ from 'jquery';
 
 
@@ -10,23 +10,27 @@ import pcImg from '../../assets/images/Background/pc.svg'
 import silueta from '../../assets/images/Background/SiluetaYisus.svg'
 
 const Home = () => {
-
-  $(document).ready(function () {
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 0) {
-        $(".section1").css({ "opacity": "0" })
-      }
-      else {
-        $(".section1").css({ "opacity": "1" })
-      }
-      if ($(this).scrollTop() > 0) {
-        $(".section2").css({ "opacity": "1" })
-      }
-      else {
-        $(".section2").css({ "opacity": "0" })
-      }
-    })
-  })
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.document) {
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 0) {
+            $(".section1").css({ "opacity": "0" })
+          }
+          else {
+            $(".section1").css({ "opacity": "1" })
+          }
+          if ($(this).scrollTop() > 0) {
+            $(".section2").css({ "opacity": "1" })
+          }
+          else {
+            $(".section2").css({ "opacity": "0" })
+          }
+        })
+      })
+    }
+  }, []);
+ 
   return (
     <div className="home">
       <Menu />
