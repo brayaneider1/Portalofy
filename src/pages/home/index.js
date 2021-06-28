@@ -1,9 +1,6 @@
 import React from "react"
 import $ from 'jquery';
-
-
 import Menu from "../../components/Layout/LayoutPublic/LayoutPublic";
-
 import tasksImg from '../../assets/images/Background/tasks.svg'
 import responsiveImg from '../../assets/images/Background/responsive.svg'
 import pcImg from '../../assets/images/Background/pc.svg'
