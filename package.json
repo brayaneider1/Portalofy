@@ -1,52 +1,54 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "react-frontend",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "private": true,
   "dependencies": {
-    "antd": "^4.8.5",
-    "gatsby": "^2.26.1",
-    "gatsby-image": "^2.5.0",
-    "gatsby-plugin-manifest": "^2.6.1",
-    "gatsby-plugin-offline": "^3.4.0",
-    "gatsby-plugin-react-helmet": "^3.4.0",
-    "gatsby-plugin-sass": "^2.6.0",
-    "gatsby-plugin-sharp": "^2.8.0",
-    "gatsby-source-filesystem": "^2.5.0",
-    "gatsby-transformer-sharp": "^2.6.0",
-    "jquery": "^3.5.1",
+    "@ant-design/icons": "^4.2.1",
+    "antd": "^4.5.1",
+    "connected-react-router": "^6.8.0",
+    "i18next": "^19.6.3",
+    "i18next-browser-languagedetector": "^5.0.0",
+    "jwt-decode": "^2.2.0",
+    "moment": "^2.27.0",
     "node-sass": "^4.14.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0",
-    "react-magic-slider-dots": "^1.2.2",
-    "react-scroll-horizontal": "^1.6.6",
-    "react-slick": "^0.27.13",
-    "slick-carousel": "^1.8.1"
+    "react": "^16.13.1",
+    "jquery": "^3.5.1",
+    "react-app-env": "^1.2.3",
+    "react-dom": "^16.13.1",
+    "react-i18next": "^11.7.0",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.1.3",
+    "serve": "^10.1.1"
   },
-  "devDependencies": {
-    "prettier": "2.1.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "start": "serve -s build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "react-app-env --env-file=environments/.env.development start",
+    "prod": "react-app-env --env-file=environments/.env.production start",
+    "build:prod": "react-app-env --env-file=environments/.env.production build",
+    "heroku-postbuild": "npm run build:prod",
+    "deploy-firebase": "firebase init && npm run build:prod && firebase deploy"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

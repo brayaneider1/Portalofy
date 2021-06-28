@@ -1,4 +1,4 @@
-import React,{useEffect} from "react"
+import React from "react"
 import $ from 'jquery';
 
 
@@ -10,8 +10,7 @@ import pcImg from '../../assets/images/Background/pc.svg'
 import silueta from '../../assets/images/Background/SiluetaYisus.svg'
 
 const Home = () => {
-  useEffect(() => {
-    if (typeof window === 'undefined' || !window.document) {
+
       $(document).ready(function () {
         $(window).scroll(function () {
           if ($(this).scrollTop() > 0) {
@@ -28,8 +27,7 @@ const Home = () => {
           }
         })
       })
-    }
-  }, []);
+ 
  
   return (
     <div className="home">
